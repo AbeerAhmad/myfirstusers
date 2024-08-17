@@ -6,6 +6,7 @@ export default function AddNewItemForm() {
   const {
     selectedCategory,
     tags,
+    categories,
     formData,
     handleCategoryChange,
     handleInputChange,
@@ -37,10 +38,11 @@ export default function AddNewItemForm() {
           onChange={(e) => handleCategoryChange(e.target.value)}
         >
           <option value="">Select a category</option>
-          <option value="acquisition">ACQUISITION</option>
-          <option value="conversion">CONVERSION</option>
-          <option value="more">MORE</option>
-          <option value="newsletter">NEWSLETTER</option>
+          {Object.keys(categories).map((category) => (
+            <option key={category} value={category}>
+              {category.toUpperCase()}
+            </option>
+          ))}
         </select>
 
         {/* Tag Selection */}

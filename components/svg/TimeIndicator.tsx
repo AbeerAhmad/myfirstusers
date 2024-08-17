@@ -9,9 +9,9 @@ const TimeIndicator = () => {
       <g
         id="lander"
         stroke="none"
-        stroke-width="1"
+        strokeWidth="1"
         fill="none"
-        fill-rule="evenodd"
+        fillRule="evenodd"
       >
         <g
           id="1340"

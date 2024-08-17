@@ -1,38 +1,6 @@
 import React, { createContext, useContext, useState, ReactNode } from "react";
+import { Tag, FormData, Example, BlogContextType } from "@/types";
 
-// Define types for Category, Tag, FormData, and Example
-type Tag = {
-  title: string;
-  slug: string;
-};
-
-type Category = {
-  [key: string]: Tag[];
-};
-
-type FormData = {
-  title: string;
-  duration: string;
-  tag: string;
-};
-
-type Example = {
-  slug: string;
-  title: string;
-  duration: string;
-  tag: string;
-};
-
-type BlogContextType = {
-  categories: Category;
-  selectedCategory: string;
-  tags: Tag[];
-  formData: FormData;
-  examples: Example[];
-  handleCategoryChange: (category: string) => void;
-  handleInputChange: (name: keyof FormData, value: string) => void;
-  addExample: () => void;
-};
 import { categories, examplesData } from "@/mockdata/mockdata";
 // Create the context with a default value
 const BlogContext = createContext<BlogContextType | undefined>(undefined);

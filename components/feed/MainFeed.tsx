@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useMemo, useEffect } from "react";
-import { Card } from "@/components/ui/card";
+import { Card, CardFooter, CardHeader } from "@/components/ui/card";
 import Modal from "@/components/Modal"; // We'll create this component
 import Link from "next/link";
 import {
@@ -66,20 +66,20 @@ const MainFeed = () => {
           >
             <Card
               key={index}
-              className="w-full h-[200px] p-6 flex flex-col justify-between bg-white-100 hover:shadow-md border-2 transition-shadow  rounded-3xl shadow-sm cursor-pointer"
+              className="w-full h-[200px] flex flex-col justify-between bg-white-100 hover:shadow-md border-2 transition-shadow  rounded-3xl shadow-sm cursor-pointer"
             >
-              <h3 className="font-bold text-lg mb-3 text-blue-800">
+              <CardHeader className="font-bold text-lg mb-3 text-blue-800">
                 {example.title}
-              </h3>
-              <div className="flex justify-between items-center">
-                <span className="text-xs flex gap-2 items-center text-gray-600 px-3 font-semibold py-1 rounded-full">
+              </CardHeader>
+              <CardFooter className="flex justify-between items-center">
+                <span className="text-xs flex gap-2 items-center text-gray-600 font-semibold rounded-full">
                   <TimeIndicator />
                   <span className="mt-1"> {example.duration}</span>
                 </span>
                 <span className="text-blue-600 px-3 py-1 rounded-full text-sm font-medium bg-blue-100 capitalize">
                   {example.tag.split("-").join(" ") || "No Tag"}
                 </span>
-              </div>
+              </CardFooter>
             </Card>
           </Link>
         ))}

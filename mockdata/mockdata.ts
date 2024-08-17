@@ -1,12 +1,6 @@
-type Tag = {
-  title: string;
-  slug: string;
-};
+import { Category } from "@/types";
 
-type Category = {
-  [key: string]: Tag[];
-};
-export const categories = {
+export const categories: Category = {
   acquisition: [
     { title: "Content", slug: "content" },
     { title: "SEO", slug: "seo" },
